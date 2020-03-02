@@ -10,7 +10,7 @@ pyup.io allow us to know right away when a third party module make break some fu
 
 The following images are available for use from Docker, having been built on python3.x-slim docker images:
 
-- ``vertexproject/synapse-base-image2:py37``
+- ``vertexproject/synapse-base-image3:py37``
 
 Builds
 ------
