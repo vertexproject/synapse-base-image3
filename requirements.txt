@@ -7,7 +7,7 @@ xxhash==1.4.3
 lmdb==0.97
 regex==2020.2.20
 PyYAML==5.3.1
-prompt-toolkit==2.0.9
+prompt-toolkit==3.0.5
 Pygments==2.5.2
 lark-parser==0.7.5
 packaging==20.3
