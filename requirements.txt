@@ -1,22 +1,22 @@
 # Required packages for synapse
-tornado==6.0.3
+tornado==6.0.4
 aiohttp==3.6.2
 pyOpenSSL==19.1.0
 msgpack==0.6.1
 xxhash==1.4.3
 lmdb==0.97
 regex==2020.2.20
-PyYAML==5.3
-prompt-toolkit==3.0.3
+PyYAML==5.3.1
+prompt-toolkit==3.0.5
 Pygments==2.5.2
 lark-parser==0.7.5
-packaging==20.1
-fastjsonschema==2.14.3
+packaging==20.3
+fastjsonschema==2.14.4
 # Code style checks
 pycodestyle==2.5.0
 # Test related packages
 coverage==4.5.4
-codecov==2.0.15
+codecov==2.0.22
 pytest==4.6.3
 pytest-cov==2.7.1
 pytest-xdist==1.24.1
