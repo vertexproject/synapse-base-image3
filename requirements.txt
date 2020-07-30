@@ -13,7 +13,7 @@ lark-parser==0.9.0
 packaging==20.3
 fastjsonschema==2.14.4
 # Code style checks
-pycodestyle==2.5.0
+pycodestyle==2.6.0
 # Test related packages
 coverage==4.5.4
 codecov==2.0.22
