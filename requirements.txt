@@ -5,7 +5,7 @@ pyOpenSSL==19.1.0
 msgpack==0.6.1
 xxhash==1.4.3
 lmdb==1.0.0
-regex==2020.7.14
+regex==2020.9.27
 PyYAML==5.3.1
 prompt-toolkit==3.0.5
 Pygments==2.6.1
