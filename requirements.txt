@@ -4,19 +4,19 @@ aiohttp==3.6.2
 pyOpenSSL==19.1.0
 msgpack==0.6.1
 xxhash==1.4.3
-lmdb==0.97
-regex==2020.2.20
-PyYAML==5.3
-prompt-toolkit==2.0.9
-Pygments==2.5.2
-lark-parser==0.7.5
+lmdb==1.0.0
+regex==2020.7.14
+PyYAML==5.3.1
+prompt-toolkit==3.0.5
+Pygments==2.6.1
+lark-parser==0.9.0
 packaging==20.3
-fastjsonschema==2.14.3
+fastjsonschema==2.14.5
 # Code style checks
-pycodestyle==2.5.0
+pycodestyle==2.6.0
 # Test related packages
 coverage==4.5.4
-codecov==2.0.16
+codecov==2.0.22
 pytest==4.6.3
 pytest-cov==2.7.1
 pytest-xdist==1.24.1
