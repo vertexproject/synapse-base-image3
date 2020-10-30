@@ -1,5 +1,5 @@
 # Required packages for synapse
-tornado==6.0.4
+tornado==6.1
 aiohttp==3.6.3
 pyOpenSSL==19.1.0
 msgpack==0.6.1
