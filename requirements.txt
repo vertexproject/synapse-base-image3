@@ -6,7 +6,7 @@ msgpack==0.6.1
 xxhash==1.4.4
 lmdb==1.0.0
 regex==2020.10.15
-PyYAML==5.3.1
+PyYAML==5.4.1
 prompt-toolkit==3.0.8
 Pygments==2.6.1
 lark-parser==0.9.0
