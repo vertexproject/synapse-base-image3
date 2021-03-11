@@ -1,14 +1,14 @@
 # Required packages for synapse
-tornado==6.0.4
-aiohttp==3.7.3
+tornado==6.1
+aiohttp==3.7.4
 aiohttp-socks==0.5.5
 pyOpenSSL==19.1.0
 msgpack==1.0.2
 xxhash==1.4.4
-lmdb==1.0.0
+lmdb==1.1.1
 regex==2020.11.13
 PyYAML==5.3.1
-prompt-toolkit==3.0.8
+prompt-toolkit==3.0.17
 Pygments==2.6.1
 lark-parser==0.9.0
 packaging==20.4
