@@ -11,7 +11,7 @@ PyYAML==5.4.1
 prompt-toolkit==3.0.18
 Pygments==2.7.4
 lark-parser==0.11.2
-packaging==20.4
+packaging==20.9
 fastjsonschema==2.14.5
 stix2-validator==2.0.4
 # Code style checks
