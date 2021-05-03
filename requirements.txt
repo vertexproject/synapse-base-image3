@@ -10,7 +10,7 @@ regex==2021.4.4
 PyYAML==5.4.1
 prompt-toolkit==3.0.18
 Pygments==2.7.4
-lark-parser==0.11.2
+lark-parser==0.11.3
 packaging==20.9
 fastjsonschema==2.14.5
 stix2-validator==2.0.4
