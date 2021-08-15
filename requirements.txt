@@ -9,7 +9,7 @@ lmdb==1.2.1
 regex==2021.4.4
 PyYAML==5.4.1
 prompt-toolkit==3.0.18
-Pygments==2.7.4
+Pygments==2.10.0
 lark-parser==0.11.2
 packaging==20.9
 fastjsonschema==2.14.5
