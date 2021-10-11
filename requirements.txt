@@ -24,7 +24,7 @@ scalecodec==1.0.2
 cbor2==5.4.1
 bech32==1.2.0
 # Code style checks
-pycodestyle==2.7.0
+pycodestyle==2.8.0
 # Test related packages
 coverage==4.5.4
 codecov==2.0.22
