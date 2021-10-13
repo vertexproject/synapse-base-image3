@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND="noninteractive"
 ENV PYTHONUNBUFFERED 1
 
 COPY requirements.txt requirements.txt
-COPY pandoc-2.14.0.1-1-amd64.deb.sha256 pandoc-2.14.0.1-1-amd64.deb.sha256
+COPY pandoc.deb.sha256 pandoc.deb.sha256
 # apt get clean / update / upgrade / install required packages / clean up
 # setup locales
 # Setup crontab from https://github.com/renskiy/cron-docker-image/blob/master/debian/Dockerfile
@@ -23,9 +23,9 @@ RUN set -ex \
     && apt-get clean && apt-get purge \
     && rm -rf /var/lib/apt/lists/* \
     && curl -L -O https://github.com/jgm/pandoc/releases/download/2.14.0.1/pandoc-2.14.0.1-1-amd64.deb \
-    && sha256sum --check pandoc-2.14.0.1-1-amd64.deb.sha256 \
+    && sha256sum --check pandoc.deb.sha256 \
     && dpkg -i pandoc-2.14.0.1-1-amd64.deb \
-    && rm pandoc-2.14.0.1-1-amd64.deb.sha256 \
+    && rm pandoc.deb.sha256 \
     && echo "en_US.UTF-8 UTF-8" > /etc/locale.gen \
     && locale-gen en_US.UTF-8 \
     && dpkg-reconfigure locales \
