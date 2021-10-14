@@ -24,7 +24,7 @@ RUN set -ex \
     && rm -rf /var/lib/apt/lists/* \
     && curl -L -o pandoc-amd64.deb https://github.com/jgm/pandoc/releases/download/2.14.0.1/pandoc-2.14.0.1-1-amd64.deb \
     && sha256sum --check pandoc.deb.sha256 \
-    && dpkg -i ppandoc-amd64.deb \
+    && dpkg -i pandoc-amd64.deb \
     && rm pandoc.deb.sha256 \
     && echo "en_US.UTF-8 UTF-8" > /etc/locale.gen \
     && locale-gen en_US.UTF-8 \
