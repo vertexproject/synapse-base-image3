@@ -23,6 +23,7 @@ typing-extensions==3.10.0.2
 scalecodec==1.0.2
 cbor2==5.4.1
 bech32==1.2.0
+aioimaplib==0.9.0
 # Code style checks
 pycodestyle==2.7.0
 # Test related packages
@@ -32,4 +33,4 @@ pytest==4.6.3
 pytest-cov==2.7.1
 pytest-xdist==1.24.1
 # Support packages for other users
-wheel==0.36.2
+wheel==0.37.0
