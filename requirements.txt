@@ -16,7 +16,7 @@ packaging==20.9
 fastjsonschema==2.14.5
 stix2-validator==3.0.1
 vcrpy==4.1.1
-base58==2.1.0
+base58==2.1.1
 python-bitcoinlib==0.11.0
 pysha3==1.0.2
 typing-extensions==3.7.4
