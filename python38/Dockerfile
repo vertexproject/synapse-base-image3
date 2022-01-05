@@ -1,4 +1,4 @@
-FROM python:3.8-slim
+FROM ubuntu:22.04
 
 MAINTAINER vEpiphyte <epiphyte@vertex.link>
 
@@ -19,7 +19,7 @@ RUN set -ex \
     && apt-get clean \
     && apt-get update \
     && apt-get -y upgrade \
-    && apt-get install -y build-essential libffi-dev libssl-dev libpq-dev locales cron git tree procps net-tools curl supervisor tini\
+    && apt-get install -y build-essential libffi-dev libssl-dev libpq-dev locales git tree procps net-tools curl supervisor tini\
     && apt-get clean && apt-get purge \
     && rm -rf /var/lib/apt/lists/* \
     && curl -L -o pandoc-amd64.deb https://github.com/jgm/pandoc/releases/download/2.14.0.1/pandoc-2.14.0.1-1-amd64.deb \
@@ -32,10 +32,6 @@ RUN set -ex \
     && /usr/sbin/update-locale LANG=en_US.UTF-8 \
     && mkdir -p /var/log/supervisor \
     && pip install -r requirements.txt \
-    && rm requirements.txt \
-    && mkfifo --mode 0666 /var/log/cron.log \
-    && sed --regexp-extended --in-place \
-    's/^session\s+required\s+pam_loginuid.so$/session optional pam_loginuid.so/' \
-    /etc/pam.d/cron
+    && rm requirements.txt
 
 ENV LANG="en_US.UTF-8" LANGUAGE="en_US.UTF-8" LC_ALL="en_US.UTF-8"
