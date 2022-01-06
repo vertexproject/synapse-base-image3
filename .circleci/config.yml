@@ -39,3 +39,4 @@ workflows:
     jobs:
       - test_37
       - test_38
+      - test_310
