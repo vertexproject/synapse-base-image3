@@ -27,7 +27,7 @@ RUN set -ex \
     && locale-gen en_US.UTF-8 \
     && dpkg-reconfigure locales \
     && /usr/sbin/update-locale LANG=en_US.UTF-8 \
-    && pip install -r requirements.txt \
+    && pip -v install -r requirements.txt \
     && rm requirements.txt \
     && apt remove -y curl build-essential \
     && apt autoremove -y \
