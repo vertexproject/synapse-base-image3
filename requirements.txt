@@ -5,12 +5,12 @@ aiohttp-socks==0.6.1
 aiosmtplib==1.1.6
 pyOpenSSL==21.0.0
 cryptography==36.0.1
-msgpack==1.0.2
+msgpack==1.0.3
 xxhash==2.0.2
 lmdb==1.2.1
 regex==2021.11.10
 PyYAML==5.4.1
-prompt-toolkit==3.0.20
+prompt-toolkit==3.0.24
 Pygments==2.7.4
 lark-parser==0.11.2
 packaging==20.9
@@ -31,8 +31,8 @@ python-dateutil==2.8.2
 # Code style checks
 pycodestyle==2.8.0
 # Test related packages
-coverage==6.0.2
-codecov==2.0.22
+coverage==6.2
+codecov==2.1.12
 pytest==6.2.5
 pytest-cov==3.0.0
 pytest-xdist==2.5.0
