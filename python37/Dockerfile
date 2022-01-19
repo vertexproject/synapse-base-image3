@@ -9,17 +9,12 @@ COPY requirements.txt requirements.txt
 COPY pandoc.deb.sha256 pandoc.deb.sha256
 # apt get clean / update / upgrade / install required packages / clean up
 # setup locales
-# Setup crontab from https://github.com/renskiy/cron-docker-image/blob/master/debian/Dockerfile
 # install python packages
-# install cron
-# making logging pipe
-# make pam_loginuid.so optional for cron
-# see https://github.com/docker/docker/issues/5663#issuecomment-42550548
 RUN set -ex \
     && apt-get clean \
     && apt-get update \
     && apt-get -y upgrade \
-    && apt-get install -y build-essential libffi-dev libssl-dev libpq-dev locales cron git tree procps net-tools curl supervisor tini\
+    && apt-get install -y build-essential locales tini\
     && apt-get clean && apt-get purge \
     && rm -rf /var/lib/apt/lists/* \
     && curl -L -o pandoc-amd64.deb https://github.com/jgm/pandoc/releases/download/2.14.0.1/pandoc-2.14.0.1-1-amd64.deb \
@@ -33,9 +28,9 @@ RUN set -ex \
     && mkdir -p /var/log/supervisor \
     && pip install -r requirements.txt \
     && rm requirements.txt \
-    && mkfifo --mode 0666 /var/log/cron.log \
-    && sed --regexp-extended --in-place \
-    's/^session\s+required\s+pam_loginuid.so$/session optional pam_loginuid.so/' \
-    /etc/pam.d/cron
+    && apt remove -y curl build-essential \
+    && apt autoremove -y \
+    && apt-get clean && apt-get purge \
+    && rm -rf /var/lib/apt/lists/*
 
 ENV LANG="en_US.UTF-8" LANGUAGE="en_US.UTF-8" LC_ALL="en_US.UTF-8"
