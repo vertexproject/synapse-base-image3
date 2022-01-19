@@ -14,7 +14,7 @@ RUN set -ex \
     && apt-get clean \
     && apt-get update \
     && apt-get -y upgrade \
-    && apt-get install -y build-essential locales tini\
+    && apt-get install --no-install-recommends -y build-essential locales curl tini\
     && apt-get clean && apt-get purge \
     && rm -rf /var/lib/apt/lists/* \
     && curl -L -o pandoc-amd64.deb https://github.com/jgm/pandoc/releases/download/2.14.0.1/pandoc-2.14.0.1-1-amd64.deb \
