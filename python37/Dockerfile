@@ -25,8 +25,12 @@ RUN set -ex \
     && apt-get install -y python3.7-full python3.7-dev \
     && update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 1 \
     && update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1 \
-    && cat get-pip-21.3.1.py | python \
     && curl -L -o pandoc-amd64.deb https://github.com/jgm/pandoc/releases/download/2.14.0.1/pandoc-2.14.0.1-1-amd64.deb \
+    && apt remove -y curl software-properties-common \
+    && apt autoremove -y \
+    && apt-get clean && apt-get purge \
+    && rm -rf /var/lib/apt/lists/* \
+    && cat get-pip-21.3.1.py | python \
     && sha256sum --check pandoc.deb.sha256 \
     && dpkg -i pandoc-amd64.deb \
     && echo "en_US.UTF-8 UTF-8" > /etc/locale.gen \
@@ -36,10 +40,6 @@ RUN set -ex \
     && pip install -r requirements.txt \
     && rm requirements.txt \
     && rm pandoc.deb.sha256 \
-    && rm get-pip-21.3.1.py \
-    && apt remove -y curl software-properties-common \
-    && apt autoremove -y \
-    && apt-get clean && apt-get purge \
-    && rm -rf /var/lib/apt/lists/*
+    && rm get-pip-21.3.1.py
 
 ENV LANG="en_US.UTF-8" LANGUAGE="en_US.UTF-8" LC_ALL="en_US.UTF-8"

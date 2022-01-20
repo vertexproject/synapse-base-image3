@@ -20,20 +20,21 @@ RUN set -ex \
     && apt-get install -y python3.10-full python3.10-dev \
     && update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1 \
     && update-alternatives --install /usr/bin/python python /usr/bin/python3.10 1 \
-    && cat get-pip-21.3.1.py | python \
     && curl -L -o pandoc-amd64.deb https://github.com/jgm/pandoc/releases/download/2.14.0.1/pandoc-2.14.0.1-1-amd64.deb \
+    && apt remove -y curl software-properties-common \
+    && apt autoremove -y \
+    && apt-get clean && apt-get purge \
+    && rm -rf /var/lib/apt/lists/* \
+    && cat get-pip-21.3.1.py | python \
     && sha256sum --check pandoc.deb.sha256 \
     && dpkg -i pandoc-amd64.deb \
-    && rm pandoc.deb.sha256 \
     && echo "en_US.UTF-8 UTF-8" > /etc/locale.gen \
     && locale-gen en_US.UTF-8 \
     && dpkg-reconfigure locales \
     && /usr/sbin/update-locale LANG=en_US.UTF-8 \
-    && pip -v install -r requirements.txt \
+    && pip install -r requirements.txt \
     && rm requirements.txt \
-    && apt remove -y curl build-essential software-properties-common \
-    && apt autoremove -y \
-    && apt-get clean && apt-get purge \
-    && rm -rf /var/lib/apt/lists/*
+    && rm pandoc.deb.sha256 \
+    && rm get-pip-21.3.1.py
 
 ENV LANG="en_US.UTF-8" LANGUAGE="en_US.UTF-8" LC_ALL="en_US.UTF-8"
