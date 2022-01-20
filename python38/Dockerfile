@@ -6,6 +6,7 @@ ENV DEBIAN_FRONTEND="noninteractive"
 ENV PYTHONUNBUFFERED 1
 
 COPY pip.sh pip.sh
+COPY get-pip-21.3.1.py get-pip-21.3.1.py
 COPY requirements.txt requirements.txt
 COPY pandoc.deb.sha256 pandoc.deb.sha256
 # apt get clean / update / upgrade / install required packages / clean up
@@ -19,7 +20,7 @@ RUN set -ex \
     && apt-get -y upgrade \
     && apt-get install --no-install-recommends -y locales curl tini python3.8-dev python3.8-full \
     && update-alternatives --install /usr/bin/python3 python /usr/bin/python3.8 1 \
-    && curl -sS https://bootstrap.pypa.io/get-pip.py | python3 \
+    && cat get-pip-21.3.1.py | python3 \
     && curl -L -o pandoc-amd64.deb https://github.com/jgm/pandoc/releases/download/2.14.0.1/pandoc-2.14.0.1-1-amd64.deb \
     && sha256sum --check pandoc.deb.sha256 \
     && dpkg -i pandoc-amd64.deb \
