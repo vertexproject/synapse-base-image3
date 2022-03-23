@@ -1,6 +1,8 @@
 Synapse Base Images 3
 ---------------------
 
+**This project is archived as of March 23, 2022.** See https://github.com/vertexproject/vtx-base-image/ for its replacement.
+
 Dockerfiles for building docker images used in Synapse CI tests and the official Synapse Docker container for synapse
 v0.2.x images.
 
